@@ -24,10 +24,10 @@ class App extends Component {
   }
 
   deletePersonHandler = personIndex => {
-    const persons = this.state.persons;
+    // const persons = this.state.persons.slice(); // create a copy ( slicle (); )
+    const persons = [...this.state.persons]; // it will spread out the elements in the array and add into a list of elements
     persons.splice(personIndex,1);
-    this.setState({persons: persons}); // Const Persons: New Persons
-    // Doing this way there is a problem
+    this.setState({persons: persons});
   }
 
   togglePersonHandler = () => {
