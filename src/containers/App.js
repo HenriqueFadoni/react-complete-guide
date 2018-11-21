@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import PropType from 'prop-types';
+
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 import WithClass from '../hoc/WithClass';
+import Person from '../components/Persons/Person/Person';
 
 class App extends Component {
   state = {
@@ -74,5 +77,12 @@ class App extends Component {
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
+
+Person.PropType = {
+  click: PropType.func,
+  name: PropType.string,
+  age: PropType.number,
+  changed: PropType.func
+};
 
 export default App;
